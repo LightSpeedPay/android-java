@@ -71,3 +71,18 @@ dependencies {
     debugImplementation libs.ui.tooling
     debugImplementation libs.ui.test.manifest
 }
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.LighSpeedPay'
+                artifactId = 'lightspeedpay'
+                version = '1.0'
+            }
+        }
+    }
+}
